@@ -3,13 +3,6 @@ import LiquidChrome from './components/LiquidChrome';
 
 const bars = [
   {
-    name: "AMUSEMENT BAR PIVOT",
-    image: "/imgs/main/pivot.JPG",
-    instagramHandle: "@bar_pivot_miyazaki",
-    instagramUrl: "https://instagram.com/bar_pivot_miyazaki",
-    hotpepperUrl: "https://www.hotpepper.jp/strJ004089339/"
-  },
-  {
     name: "大人の隠れ家　BAR よ白",
     image: "/imgs/main/yohaku.JPG", 
     instagramHandle: "@bar.yohaku",
@@ -22,6 +15,13 @@ const bars = [
     instagramHandle: "@bar_work.miyazaki", 
     instagramUrl: "https://instagram.com/bar_work.miyazaki",
     hotpepperUrl: "https://www.hotpepper.jp/strJ003941638/"
+  },
+  {
+    name: "AMUSEMENT BAR PIVOT",
+    image: "/imgs/main/pivot.JPG",
+    instagramHandle: "@bar_pivot_miyazaki",
+    instagramUrl: "https://instagram.com/bar_pivot_miyazaki",
+    hotpepperUrl: "https://www.hotpepper.jp/strJ004089339/"
   }
 ];
 
