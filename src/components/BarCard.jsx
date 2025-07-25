@@ -1,33 +1,10 @@
 import { Button } from './ui/button';
 import { Instagram, ExternalLink } from 'lucide-react';
 import { cn } from '../lib/utils';
-import FluidGlass from './FluidGlass';
 
 const BarCard = ({ bar, reverse = false }) => {
   return (
-    <div className="relative overflow-hidden rounded-lg group w-full mx-auto">
-      {/* Glass Card Background */}
-      <div className="absolute inset-0 h-full w-full">
-        <FluidGlass
-          mode="cube"
-          cubeProps={{
-            scale: 1.0,
-            ior: 1.8,
-            thickness: 8,
-            chromaticAberration: 0.15,
-            anisotropy: 0.05,
-            transmission: 0.9,
-            roughness: 0.02,
-            color: '#ffffff',
-            attenuationColor: '#f8fafc',
-            attenuationDistance: 0.5,
-            clearcoat: 1.0,
-            clearcoatRoughness: 0.0,
-            reflectivity: 0.6,
-            envMapIntensity: 1.2
-          }}
-        />
-      </div>
+    <div className="relative overflow-hidden rounded-xl group w-full mx-auto bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-sm border border-white/10 shadow-2xl hover:shadow-3xl hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2">
 
       {/* Card Content */}
       <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-2 gap-0 min-h-[300px] sm:min-h-[400px] w-full">
@@ -39,49 +16,33 @@ const BarCard = ({ bar, reverse = false }) => {
           <img 
             src={bar.image} 
             alt={bar.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/50 transition-all duration-500" />
+          <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-500" />
         </div>
 
         {/* Content Section */}
         <div className={cn(
-          "p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col justify-center backdrop-blur-sm w-full",
+          "p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-center backdrop-blur-sm w-full relative",
           reverse && "lg:order-1"
         )}>
-          <div className="space-y-3 sm:space-y-4 lg:space-y-6 w-full">
+          {/* Card content background overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent group-hover:from-black/10 transition-all duration-500" />
+          <div className="space-y-4 sm:space-y-5 lg:space-y-7 w-full relative z-10">
             <div className="space-y-2 sm:space-y-3 lg:space-y-4 w-full">
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif font-bold text-white leading-tight drop-shadow-lg break-words w-full">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-white leading-tight drop-shadow-lg break-words w-full group-hover:text-gray-100 transition-colors duration-300">
                 {bar.name}
               </h2>
               
               <div className="flex flex-col gap-2 sm:gap-3 w-full">
-                {/* Instagram Link with Fluid Glass */}
+                {/* Instagram Link */}
                 <div className="relative h-10 sm:h-11 w-full max-w-full">
-                  <FluidGlass
-                    mode="bar"
-                    barProps={{
-                      scale: 0.3,
-                      ior: 2.4,
-                      thickness: 15,
-                      chromaticAberration: 0.25,
-                      anisotropy: 0.1,
-                      transmission: 0.95,
-                      roughness: 0.05,
-                      color: '#ffffff',
-                      attenuationColor: '#e0e7ff',
-                      attenuationDistance: 0.2,
-                      clearcoat: 1.0,
-                      clearcoatRoughness: 0.0,
-                      reflectivity: 0.8,
-                      envMapIntensity: 1.5
-                    }}
-                  />
                   <Button 
                     asChild
                     variant="outline" 
                     size="sm"
-                    className="absolute inset-0 border-white/30 bg-transparent hover:bg-white/20 hover:border-white/50 transition-all duration-300 z-10 text-white hover:text-white text-xs h-full w-full min-w-0"
+                    className="w-full border-white/30 bg-black/60 hover:bg-white/20 hover:border-white/50 transition-all duration-300 text-white hover:text-white text-xs h-full min-w-0"
                   >
                     <a 
                       href={bar.instagramUrl}
@@ -95,31 +56,12 @@ const BarCard = ({ bar, reverse = false }) => {
                   </Button>
                 </div>
 
-                {/* Hotpepper Link with Fluid Glass */}
+                {/* Hotpepper Link */}
                 <div className="relative h-10 sm:h-11 w-full max-w-full">
-                  <FluidGlass
-                    mode="bar"
-                    barProps={{
-                      scale: 0.3,
-                      ior: 2.4,
-                      thickness: 15,
-                      chromaticAberration: 0.25,
-                      anisotropy: 0.1,
-                      transmission: 0.95,
-                      roughness: 0.05,
-                      color: '#ffffff',
-                      attenuationColor: '#fef3cd',
-                      attenuationDistance: 0.2,
-                      clearcoat: 1.0,
-                      clearcoatRoughness: 0.0,
-                      reflectivity: 0.8,
-                      envMapIntensity: 1.5
-                    }}
-                  />
                   <Button 
                     asChild
                     size="sm"
-                    className="absolute inset-0 bg-transparent hover:bg-white/20 text-white hover:text-white font-medium transition-all duration-300 z-10 border border-white/30 hover:border-white/50 text-xs h-full w-full min-w-0"
+                    className="w-full bg-black/60 hover:bg-white/20 text-white hover:text-white font-medium transition-all duration-300 border border-white/30 hover:border-white/50 text-xs h-full min-w-0"
                   >
                     <a 
                       href={bar.hotpepperUrl}
@@ -136,8 +78,8 @@ const BarCard = ({ bar, reverse = false }) => {
             </div>
 
             {/* Decorative Element */}
-            <div className="pt-2 lg:pt-4">
-              <div className="w-12 sm:w-16 h-px bg-gradient-to-r from-white/60 to-white/20"></div>
+            <div className="pt-3 lg:pt-5">
+              <div className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-white/70 to-white/20 group-hover:from-white/90 group-hover:to-white/30 transition-all duration-500 rounded-full"></div>
             </div>
           </div>
         </div>

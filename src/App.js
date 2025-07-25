@@ -1,5 +1,4 @@
 import BarCard from './components/BarCard';
-import LiquidChrome from './components/LiquidChrome';
 
 const bars = [
   {
@@ -27,23 +26,12 @@ const bars = [
 
 function App() {
   return (
-    <div className="min-h-screen relative w-full overflow-x-hidden">
-      {/* Liquid Chrome Background */}
-      <div className="fixed inset-0 z-0 w-full">
-        <LiquidChrome
-          baseColor={[0.1, 0.1, 0.1]}
-          speed={0.1}
-          amplitude={0.5}
-          frequencyX={3}
-          frequencyY={2}
-          interactive={true}
-        />
-      </div>
+    <div className="min-h-screen relative w-full overflow-x-hidden bg-black">
 
       {/* Main Content */}
       <main className="relative z-10 py-8 lg:py-16 w-full flex flex-col items-center justify-center">
-        <div className="w-full max-w-sm sm:max-w-md md:max-w-4xl lg:max-w-6xl px-2 sm:px-4 mx-auto">
-          <div className="flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center justify-center w-full">
+        <div className="w-full max-w-sm sm:max-w-md md:max-w-4xl lg:max-w-6xl px-4 sm:px-6 mx-auto">
+          <div className="flex flex-col gap-10 sm:gap-14 md:gap-18 lg:gap-24 items-center justify-center w-full">
             {bars.map((bar, index) => (
               <div 
                 key={index} 
